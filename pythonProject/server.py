@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from keyword_spotting_service import Keyword_Spotting_Service
 import os
 
+
 app = Flask(__name__)
 
 @app.route("/predict", methods = ["POST"])
