@@ -3,8 +3,7 @@ import random
 from flask import Flask, request, jsonify
 from keyword_spotting_service import Keyword_Spotting_Service
 import os
-
-
+from waitress import serve
 app = Flask(__name__)
 
 @app.route("/predict", methods = ["POST"])
@@ -27,4 +26,4 @@ def predict():
     return jsonify(data)
 
 if __name__ == "__main__":
-    app.run(debug=False)
+    serve(app,host='0.0.0.0', port=900, threads=4)

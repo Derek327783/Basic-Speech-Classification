@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 import tensorflow.keras as keras
 
 DATASET_PATH = "data.json"
-SAVED_MODEL_PATH = "model.h5"
+SAVED_MODEL_PATH = "model.keras"
 EPOCHS = 40
 LEARNING_RATE = 0.0001
 BATCH_SIZE = 32

@@ -1,0 +1,25 @@
+# This file is for creation of all the docker containers and pretty much like the final
+# Excecution of all the docker files in the flask and nginx container and their interactions
+
+version: "3.7"
+
+services:
+
+  flask:
+    # Docker will look into relative path for flask docker file and will run that to build
+    # flask container
+    build: ./flask
+    container_name: flask
+    restart: always
+    expose:
+      - 900
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      # This is to map the port of the host machine to the port of the nginx container
+      # Can imagine this as connecting port 80 of AWS host to port 1234 of the nginx container
+      # Its 1234 because in the nginx.conf file we specified that nginx will listen to port 1234
+      - "80:1234"

@@ -21,7 +21,7 @@ def prepare_dataset(dataset_path,json_path, n_mfcc=13, hop_length = 512, n_fft =
         if i == 5:
             break
         if dirpath is not dataset_path:
-            category = dirpath.split("/")[-1]
+            category = dirpath.split("\\")[-1]
             data["mappings"].append(category)
             print(f"Processing {category}")
             for audio_files in filename: # Iterate through the files
@@ -43,6 +43,7 @@ def prepare_dataset(dataset_path,json_path, n_mfcc=13, hop_length = 512, n_fft =
 if __name__ == "__main__":
     prepare_dataset(DATASET_PATH,JSON_PATH)
 
+
 # data = {
 #     "mappings" : [], # Word labels
 #     "labels" : [], # Numerical labels
@@ -58,8 +59,9 @@ if __name__ == "__main__":
 #     if i == 2:
 #         break
 #     if dirpath is not DATASET_PATH:
-#         category = dirpath.split("/")[-1]
+#         category = dirpath.split("\\")[-1]
 #         data["mappings"].append(category)
+#         print(category)
 #         print(f"Processing {category}")
 #         for audio_files in filename: # Iterate through the files
 #             file_path = os.path.join(dirpath,audio_files) # Get file path
